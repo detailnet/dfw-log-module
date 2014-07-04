@@ -17,19 +17,19 @@ trait LoggerAwareTrait
         }
     }
 
-    private function setLoggerPrefix($prefix)
+    protected function setLoggerPrefix($prefix)
     {
         $this->loggerPrefix = $prefix;
     }
 
-    private function getLoggerPrefix()
+    protected function getLoggerPrefix($formatted = true)
     {
         if ($this->loggerPrefix === null) {
             $classNameParts = explode('\\', get_class($this));
 
-            $this->loggerPrefix = sprintf('[%s] ', $classNameParts[count($classNameParts) - 1]);
+            $this->loggerPrefix = $classNameParts[count($classNameParts) - 1];
         }
 
-        return $this->loggerPrefix;
+        return ($formatted === false) ? $this->loggerPrefix : sprintf('[%s] ', $this->loggerPrefix);
     }
 }
