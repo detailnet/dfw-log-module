@@ -1,5 +1,5 @@
 {
-    "name": "detailnet/dfw-log",
+    "name": "detailnet/dfw-log-module",
     "description": "Zend Framework 2 Module for dfw-log",
     "type": "library",
     "keywords": [
