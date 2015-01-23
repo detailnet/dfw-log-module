@@ -6,10 +6,13 @@ use Detail\Core\Options\AbstractOptions;
 
 class ModuleOptions extends AbstractOptions
 {
+    /**
+     * @var string
+     */
     protected $logger;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLogger()
     {
@@ -17,7 +20,7 @@ class ModuleOptions extends AbstractOptions
     }
 
     /**
-     * @param mixed $logger
+     * @param string $logger
      */
     public function setLogger($logger)
     {
