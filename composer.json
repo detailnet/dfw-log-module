@@ -1,12 +1,12 @@
 {
     "name": "detailnet/dfw-log-module",
-    "description": "Zend Framework 2 Module for dfw-log",
+    "description": "Zend Framework Module for dfw-log",
     "type": "library",
     "keywords": [
         "dfw",
         "detailnet",
         "log",
-        "zf2",
+        "zf",
         "module"
     ],
     "homepage": "https://github.com/detailnet/dfw-log-module/",
@@ -18,20 +18,20 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "psr/log": "~1.0",
-        "zendframework/zend-loader": "2.*",
-        "zendframework/zend-modulemanager": "2.*",
-        "zendframework/zend-mvc": "2.*",
-        "zendframework/zend-servicemanager": "2.*",
-        "detailnet/dfw-core": "~0.2",
-        "detailnet/dfw-log": "~0.2.0"
+        "php": "^7.0",
+        "psr/log": "^1.0",
+        "zendframework/zend-loader": "^2.5.1",
+        "zendframework/zend-modulemanager": "^2.7.2",
+        "zendframework/zend-mvc": "^3.0.1",
+        "zendframework/zend-servicemanager": "^3.1",
+        "detailnet/dfw-core": "^0.3",
+        "detailnet/dfw-log": "^1.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.4.2",
-        "squizlabs/php_codesniffer" : "~2.2.0",
-        "phpmd/phpmd": "~2.1.3",
-        "satooshi/php-coveralls": "dev-master"
+        "phpunit/phpunit": "^6.0",
+        "squizlabs/php_codesniffer" : "^2.2",
+        "phpmd/phpmd": "^2.2",
+        "satooshi/php-coveralls": "^1.0"
     },
     "autoload": {
         "psr-0": {

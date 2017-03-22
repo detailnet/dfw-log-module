@@ -2,33 +2,34 @@
 
 namespace Detail\Log\Service;
 
+use Interop\Container\ContainerInterface;
+
 use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
 
-use Zend\ServiceManager\InitializerInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\ServiceManager\Initializer\InitializerInterface;
 
-class LoggerInitializer implements InitializerInterface
+use Detail\Log\Options\ModuleOptions;
+
+class LoggerInitializer implements
+    InitializerInterface
 {
     /**
-     * Initialize
+     * Initialize the given instance
      *
-     * @param $instance
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
+     * @param ContainerInterface $container
+     * @param object $instance
+     * @return void
      */
-    public function initialize($instance, ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $instance)
     {
         if ($instance instanceof LoggerAwareInterface) {
-            if ($serviceLocator instanceof ServiceLocatorAwareInterface) {
-                $serviceLocator = $serviceLocator->getServiceLocator();
-            }
+            /** @var ModuleOptions $moduleOptions */
+            $moduleOptions = $container->get(ModuleOptions::CLASS);
 
-            /** @var \Detail\Log\Options\ModuleOptions $options */
-            $options = $serviceLocator->get('Detail\Log\Options\ModuleOptions');
+            /** @var LoggerInterface $logger */
+            $logger = $container->get($moduleOptions->getLogger());
 
-            /** @var \Psr\Log\LoggerInterface $logger */
-            $logger = $serviceLocator->get($options->getLogger());
             $instance->setLogger($logger);
         }
     }
