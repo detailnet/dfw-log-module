@@ -2,25 +2,29 @@
 
 namespace Detail\Log\Factory\Options;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Interop\Container\ContainerInterface;
 
+use Zend\ServiceManager\Factory\FactoryInterface;
+
+use Detail\Log\Exception\ConfigException;
 use Detail\Log\Options\ModuleOptions;
-
-use RuntimeException;
 
 class ModuleOptionsFactory implements FactoryInterface
 {
     /**
-     * {@inheritDoc}
+     * Create ModuleOptions
+     *
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
      * @return ModuleOptions
      */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $serviceLocator->get('Config');
+        $config = $container->get('Config');
 
         if (!isset($config['detail_log'])) {
-            throw new RuntimeException('Config for Detail\Log is not set');
+            throw new ConfigException('Config for Detail\Log is not set');
         }
 
         return new ModuleOptions($config['detail_log']);

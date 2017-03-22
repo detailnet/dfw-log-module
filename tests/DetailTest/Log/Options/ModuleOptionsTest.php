@@ -2,17 +2,19 @@
 
 namespace DetailTest\Log\Options;
 
+use Detail\Log\Options\ModuleOptions;
+
 class ModuleOptionsTest extends OptionsTestCase
 {
     /**
-     * @var \Detail\Log\Options\ModuleOptions
+     * @var ModuleOptions
      */
     protected $options;
 
     protected function setUp()
     {
         $this->options = $this->getOptions(
-            'Detail\Log\Options\ModuleOptions',
+            ModuleOptions::CLASS,
             array(
                 'getLogger',
                 'setLogger',
