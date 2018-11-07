@@ -9,7 +9,8 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 use Detail\Log\Exception\ConfigException;
 use Detail\Log\Options\ModuleOptions;
 
-class ModuleOptionsFactory implements FactoryInterface
+class ModuleOptionsFactory implements
+    FactoryInterface
 {
     /**
      * Create ModuleOptions

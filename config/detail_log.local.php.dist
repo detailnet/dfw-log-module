@@ -1,6 +1,6 @@
 <?php
 
-return array(
-    'detail_log' => array(
-    ),
-);
+return [
+    'detail_log' => [
+    ],
+];
