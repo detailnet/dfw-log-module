@@ -1,4 +1,4 @@
-# Zend Framework Module for dfw-log
+# Zend Framework Module for logging
 
 [![Build Status](https://travis-ci.org/detailnet/dfw-log-module.svg?branch=master)](https://travis-ci.org/detailnet/dfw-log-module)
 [![Coverage Status](https://img.shields.io/coveralls/detailnet/dfw-log-module.svg)](https://coveralls.io/r/detailnet/dfw-log-module)
@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/detailnet/dfw-log-module/v/unstable.svg)](https://packagist.org/packages/detailnet/dfw-log-module)
 
 ## Introduction
-This module integrates the [DETAIL Framework library for logging](https://github.com/detailnet/dfw-log) with [Zend Framework](https://github.com/zendframework/zendframework).
+This module simplifies logging for a [Zend Framework](https://github.com/zendframework/zendframework) application.
 
 ## Requirements
 [Zend Framework Skeleton Application](http://www.github.com/zendframework/ZendSkeletonApplication) (or compatible architecture)
